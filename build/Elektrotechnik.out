@@ -1,0 +1,106 @@
+\BOOKMARK [1][-]{section.1}{Gleichstromkreis}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Grundlagen}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Farbkodierung}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Spezifischer Widerstand}{section.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.3.1}{Beispiel}{subsection.1.3}% 5
+\BOOKMARK [2][-]{subsection.1.4}{Parametrische Widerst\344nde}{section.1}% 6
+\BOOKMARK [3][-]{subsubsection.1.4.1}{PTC}{subsection.1.4}% 7
+\BOOKMARK [3][-]{subsubsection.1.4.2}{NTC}{subsection.1.4}% 8
+\BOOKMARK [3][-]{subsubsection.1.4.3}{LDR}{subsection.1.4}% 9
+\BOOKMARK [3][-]{subsubsection.1.4.4}{Varistor}{subsection.1.4}% 10
+\BOOKMARK [3][-]{subsubsection.1.4.5}{Halbleiterpl\344ttchen}{subsection.1.4}% 11
+\BOOKMARK [1][-]{section.2}{Netzwerkanalyse}{}% 12
+\BOOKMARK [2][-]{subsection.2.1}{Kirchhoffsche Gesetze}{section.2}% 13
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Knotengleichungen}{subsection.2.1}% 14
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Maschengleichung}{subsection.2.1}% 15
+\BOOKMARK [2][-]{subsection.2.2}{Reihenschaltung}{section.2}% 16
+\BOOKMARK [2][-]{subsection.2.3}{Parallelschaltung}{section.2}% 17
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Spannungsteiler}{subsection.2.3}% 18
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Stromteiler}{subsection.2.3}% 19
+\BOOKMARK [2][-]{subsection.2.4}{Leistungsanpassung}{section.2}% 20
+\BOOKMARK [2][-]{subsection.2.5}{Spannungsquelle / Stromquelle}{section.2}% 21
+\BOOKMARK [2][-]{subsection.2.6}{Wirkungsgrad}{section.2}% 22
+\BOOKMARK [2][-]{subsection.2.7}{Stern-Dreieck-Umwandlung}{section.2}% 23
+\BOOKMARK [2][-]{subsection.2.8}{Superpositionsprinzip}{section.2}% 24
+\BOOKMARK [2][-]{subsection.2.9}{Ersatzspannungsquelle}{section.2}% 25
+\BOOKMARK [2][-]{subsection.2.10}{Maschenstromverfahren}{section.2}% 26
+\BOOKMARK [2][-]{subsection.2.11}{Knotenpotenzialverfahren}{section.2}% 27
+\BOOKMARK [1][-]{section.3}{Elektrische Felder}{}% 28
+\BOOKMARK [2][-]{subsection.3.1}{Coulomb'sches Gesetz}{section.3}% 29
+\BOOKMARK [2][-]{subsection.3.2}{Kapazit\344t}{section.3}% 30
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Parallel-/Serienschaltung}{subsection.3.2}% 31
+\BOOKMARK [2][-]{subsection.3.3}{Plattenkondensator mit Dielektrikum}{section.3}% 32
+\BOOKMARK [3][-]{subsubsection.3.3.1}{teilweise/vollst\344ndig gef\374llt:}{subsection.3.3}% 33
+\BOOKMARK [2][-]{subsection.3.4}{Elektrischer Fluss}{section.3}% 34
+\BOOKMARK [2][-]{subsection.3.5}{Gauss'scher Satz der Elektrostatik}{section.3}% 35
+\BOOKMARK [2][-]{subsection.3.6}{Energie im Kondensator}{section.3}% 36
+\BOOKMARK [2][-]{subsection.3.7}{Folienkondensatoren}{section.3}% 37
+\BOOKMARK [2][-]{subsection.3.8}{Elektrolytkondensatoren \(Elko\)}{section.3}% 38
+\BOOKMARK [2][-]{subsection.3.9}{Keramikkondensatoren}{section.3}% 39
+\BOOKMARK [2][-]{subsection.3.10}{Transiente Vorg\344nge in RC-Schaltkreisen}{section.3}% 40
+\BOOKMARK [3][-]{subsubsection.3.10.1}{Strom-/Spannungsbeziehung am Kondensator}{subsection.3.10}% 41
+\BOOKMARK [1][-]{section.4}{Magnetische Felder}{}% 42
+\BOOKMARK [2][-]{subsection.4.1}{Feldlinien}{section.4}% 43
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Kraft auf einen Stromdurchflossenen Leiter}{subsection.4.1}% 44
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Magnetischer Fluss}{subsection.4.1}% 45
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Magnetische Feldst\344rke}{subsection.4.1}% 46
+\BOOKMARK [3][-]{subsubsection.4.1.4}{Durchflutungsgesetz}{subsection.4.1}% 47
+\BOOKMARK [2][-]{subsection.4.2}{Materie im Magnetfeld}{section.4}% 48
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Diamagnetische Stoffe}{subsection.4.2}% 49
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Paramagnetische Stoffe}{subsection.4.2}% 50
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Ferromagnetische Stoffe}{subsection.4.2}% 51
+\BOOKMARK [3][-]{subsubsection.4.2.4}{Hysteresis}{subsection.4.2}% 52
+\BOOKMARK [2][-]{subsection.4.3}{Induktivit\344t}{section.4}% 53
+\BOOKMARK [2][-]{subsection.4.4}{Reihenschaltung / Parallelschaltung Induktivit\344t}{section.4}% 54
+\BOOKMARK [2][-]{subsection.4.5}{Magnetischer Kreis}{section.4}% 55
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Zusammenfassung}{subsection.4.5}% 56
+\BOOKMARK [2][-]{subsection.4.6}{Lorentzkraft}{section.4}% 57
+\BOOKMARK [2][-]{subsection.4.7}{Induktionsgesetz}{section.4}% 58
+\BOOKMARK [2][-]{subsection.4.8}{Lenz'sche Regel}{section.4}% 59
+\BOOKMARK [2][-]{subsection.4.9}{Selbstinduktion}{section.4}% 60
+\BOOKMARK [2][-]{subsection.4.10}{Energie in der Induktivit\344t}{section.4}% 61
+\BOOKMARK [2][-]{subsection.4.11}{Hystereseverluste}{section.4}% 62
+\BOOKMARK [2][-]{subsection.4.12}{Magnetischer Kreis mit Luftspalt}{section.4}% 63
+\BOOKMARK [2][-]{subsection.4.13}{Magnetische Kopplung}{section.4}% 64
+\BOOKMARK [2][-]{subsection.4.14}{Idealer \334bertrager}{section.4}% 65
+\BOOKMARK [2][-]{subsection.4.15}{Transiente Vorg\344nge in RL-Netwerken}{section.4}% 66
+\BOOKMARK [2][-]{subsection.4.16}{Maschenstromverfahren f\374r RL-Netzwerke}{section.4}% 67
+\BOOKMARK [2][-]{subsection.4.17}{Kernmaterialien f\374r Transformatoren}{section.4}% 68
+\BOOKMARK [3][-]{subsubsection.4.17.1}{Blechkern}{subsection.4.17}% 69
+\BOOKMARK [3][-]{subsubsection.4.17.2}{Eisenpulver}{subsection.4.17}% 70
+\BOOKMARK [3][-]{subsubsection.4.17.3}{Charakteristische S\344ttigungdichten}{subsection.4.17}% 71
+\BOOKMARK [1][-]{section.5}{Wechselstrom}{}% 72
+\BOOKMARK [2][-]{subsection.5.1}{Grundbegriffe}{section.5}% 73
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Wechselgr\366sse}{subsection.5.1}% 74
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Sinusf\366rmige Signale}{subsection.5.1}% 75
+\BOOKMARK [3][-]{subsubsection.5.1.3}{Phasenverschiebung}{subsection.5.1}% 76
+\BOOKMARK [3][-]{subsubsection.5.1.4}{Gleichrichtwert}{subsection.5.1}% 77
+\BOOKMARK [3][-]{subsubsection.5.1.5}{Effektivwert}{subsection.5.1}% 78
+\BOOKMARK [2][-]{subsection.5.2}{Zeigerdiagramm}{section.5}% 79
+\BOOKMARK [3][-]{subsubsection.5.2.1}{f\374r gleichfrequente Vektoren}{subsection.5.2}% 80
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Komplexe Rechnung}{subsection.5.2}% 81
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Operationen}{subsection.5.2}% 82
+\BOOKMARK [2][-]{subsection.5.3}{Bauelemente}{section.5}% 83
+\BOOKMARK [2][-]{subsection.5.4}{Reihen und Parallelschaltung von Impedanzen}{section.5}% 84
+\BOOKMARK [2][-]{subsection.5.5}{Ersatzquelle f\374r Wechselstromkreise}{section.5}% 85
+\BOOKMARK [2][-]{subsection.5.6}{Frequenzabh\344ngiger Spannungsteiler \(Tiefpass\)}{section.5}% 86
+\BOOKMARK [2][-]{subsection.5.7}{Umwandlung von Reihen- und Parallelschaltung}{section.5}% 87
+\BOOKMARK [2][-]{subsection.5.8}{Leistung im Wechselstromkreis}{section.5}% 88
+\BOOKMARK [3][-]{subsubsection.5.8.1}{Leistung im RL-Netzwerk}{subsection.5.8}% 89
+\BOOKMARK [3][-]{subsubsection.5.8.2}{Leistung mit allgemeiner Impedanz}{subsection.5.8}% 90
+\BOOKMARK [2][-]{subsection.5.9}{Blindleistung}{section.5}% 91
+\BOOKMARK [3][-]{subsubsection.5.9.1}{bei Rechnung mit reinen Effektivwerten}{subsection.5.9}% 92
+\BOOKMARK [2][-]{subsection.5.10}{Scheinleistung}{section.5}% 93
+\BOOKMARK [2][-]{subsection.5.11}{Leistungsanpassung}{section.5}% 94
+\BOOKMARK [2][-]{subsection.5.12}{Blindleistungskompensation}{section.5}% 95
+\BOOKMARK [2][-]{subsection.5.13}{RL-Tiefpassfilter}{section.5}% 96
+\BOOKMARK [2][-]{subsection.5.14}{RL-Hochpassfilter}{section.5}% 97
+\BOOKMARK [2][-]{subsection.5.15}{RLC-Serienschwingkreis}{section.5}% 98
+\BOOKMARK [2][-]{subsection.5.16}{RLC-Parallelschwingkreis}{section.5}% 99
+\BOOKMARK [1][-]{section.6}{Reale Bauelemente}{}% 100
+\BOOKMARK [2][-]{subsection.6.1}{Parasit\344re Effekte bei Spulen}{section.6}% 101
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Parasit\344re Kapazit\344t}{subsection.6.1}% 102
+\BOOKMARK [2][-]{subsection.6.2}{Parasit\344re Effekte bei Kondensatoren}{section.6}% 103
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Parasit\344rer Widerstand / Induktivit\344t}{subsection.6.2}% 104
+\BOOKMARK [2][-]{subsection.6.3}{Parasit\344re Effekte bei Widerst\344nden}{section.6}% 105
+\BOOKMARK [2][-]{subsection.6.4}{Skin-Effekt}{section.6}% 106

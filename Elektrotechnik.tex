@@ -1,0 +1,1142 @@
+\documentclass[10pt,a4paper]{scrartcl}
+
+\input{../Headerfiles/Packages}
+\usepackage[ngerman]{babel}
+\def\StyleColor{Snow4}
+
+% section color box
+\setkomafont{section}{\mysection}
+
+\newcommand{\mysection}[1]{	
+	\Large\normalfont\scshape
+    \setlength{\fboxsep}{0cm}%already boxed
+    \vspace{-1ex}
+    \colorbox{\StyleColor!60}{%
+        \begin{minipage}{\linewidth}%
+            \vspace*{4pt}%Space before
+            #1
+            \vspace*{4pt}%Space after
+        \end{minipage}%
+     }
+     \vspace{0ex}
+}
+
+%subsection color box
+\setkomafont{subsection}{\mysubsection}
+
+\newcommand{\mysubsection}[1]{%
+    \normalsize\normalfont\scshape%
+    \vspace{-2.5ex}
+    \setlength{\fboxsep}{0cm}%already boxed
+    \colorbox{\StyleColor!40}{%
+        \begin{minipage}{\linewidth}%
+            \vspace*{4pt}%Space before
+             #1
+            \vspace*{4pt}%Space after
+        \end{minipage}%
+    }
+    \vspace{-2.5ex}
+}
+    
+\setkomafont{subsubsection}{\mysubsection}
+\newcommand{\mysubsubsection}[1]{%
+    \small\normalfont\scshape%
+    \vspace{-2.5ex}
+    \setlength{\fboxsep}{0cm}%already boxed
+    \colorbox{\StyleColor!5}{%
+        \begin{minipage}{\linewidth}%
+            \vspace*{4pt}%Space before
+             #1
+            \vspace*{4pt}%Space after
+        \end{minipage}%
+    }
+    \vspace{-2.5ex}
+}
+\input{../Headerfiles/Commands}
+
+
+
+%-------------------------------------------------------------------
+%linespread
+\renewcommand{\baselinestretch}{1.3}
+%-------------------------------------------------------------------
+\pagestyle{empty}
+\author{GianAndrea Müller}
+\title{Zusammenfassung Elektrotechnik I}
+%Grundlagen der Elektrotechnik, Gert Hagmann ISBN:978-3-89104-747-7
+%Grundlagen der Elektrotechnik 1+2 Manfred Albach, ISBN:978-3-8689-4080-0
+\begin{document}
+\begin{multicols*}{3}	%divide page into 3 columns
+	\parindent 0pt %no indent at the first line of a new paragraph
+	\setlength{\columnseprule}{0.5pt}	%column-dividing rule
+ 	%\maketitle
+ 	%\clearpage
+
+	\section{Gleichstromkreis}
+	
+	\subsection{Grundlagen}
+
+	$e=1.6\cdot 10^{-19} C$\hfill$[Q]=1$ Coulomb
+	
+	$I=\frac{Q}{t}$\hfill$[I]=1$ Ampère
+	
+	$[U]=1$ Volt\hfill$[R]=1$ Ohm, 1 $\Omega$
+	
+	Die Spannung U ist von $\oplus$ nach $\ominus$ gerichtet. 
+	
+	\finn
+	
+	$F=\frac{1}{4\pi\epsilon_0}\frac{Q_1Q_2}{r^2}$\hfill$\epsilon_0=8.854\cdot 10^{-12}\frac{As}{Vm}$
+	
+	Elektronengeschwindigkeit: $v=\frac{I}{enA}$
+	
+	\finn
+	
+	Arbeit: $W = QU$\hfill$W = ItU$
+	
+	Leistung: $P=\frac{W}{t}=UI=\frac{U^2}{R}=I^2 R$\hfill$[P]=W=\frac{J}{s}$
+
+	\subsection{Farbkodierung}	
+	
+	\mypic{Widerstaende.png}
+	
+	\mypic{Widerstaende2.png}
+	
+	\subsection{Spezifischer Widerstand}
+	
+	$R = \rho \frac{l}{A}$\hfill$\kappa = \frac{1}{\rho}$\hfill$[\rho]=\Omega m$\hfill$[\kappa]=\frac{S}{m}$
+	
+	$\rho(T)=\rho_{20^\circ C}[1+\alpha(T-20^\circ C)]=\rho_{20^\circ C}(1+\alpha\Delta T)$
+	
+	für Halbleiter ist $\alpha<0$. $\rho$ nimmt mit steigender Temperatur ab.
+	
+	\mypic{SpezifischerWiderstand.png}
+	
+	 	
+	
+	\subsubsection{Beispiel}	
+	
+	$n = 37$\hfill$d=\SI{2}{\milli\meter}$\hfill$\rho_{20^\circ C}=\SI{2.65e-2}{\ohm\milli\meter\squared\per\meter}$
+	
+	\finn
+	
+	$R = \rho \frac{l}{A}=\SI{2.65e-2}{\ohm\milli\meter\squared\per\meter}\frac{\SI{1000}{\meter}}{\SI{116.2}{\milli\meter\squared}}=\SI{0.228}{\ohm}$
+	
+	\finn
+	
+	$A = n\frac{d^2\pi}{4}=\SI{116.2}{\milli\meter\squared}$
+	
+	$P=UI=I^2 R=(\SI{100}{\ampere})^2(\SI{0.228}{\ohm})$
+	
+	$\rho_{45^\circ C}=\rho_{20^\circ C}(1+\alpha \Delta T)\Rightarrow R_{45^\circ C}=...$	
+	
+	\subsection{Parametrische Widerstände}
+	\subsubsection{PTC}
+	Positive Temperature Coefficient, Kaltleiter, Widerstand steigt mit steigender Temperature, $\alpha >0$.
+	\subsubsection{NTC}
+	Negative Temperature Coefficient, Heissleiter, Widerstand sinkt mit steigender Temperatur, $\alpha <0$.
+	
+	\columnbreak
+	
+	\subsubsection{LDR}
+	Light Dependent Resistor, Widerstand sinkt mit wachsendem Lichteinfall, relative lange Reaktionszeit.
+	\subsubsection{Varistor}
+	VARiable resISTOR, Voltage Dependent Resistor: VDR, oberhalb bestimmter Schwellspannung wird Widerstand plötzlich kleiner.
+		
+	\subsubsection{Halbleiterplättchen}
+	Widerstand wird kleiner mit steigender Temperatur.
+	
+	\section{Netzwerkanalyse}
+	\subsection{Kirchhoffsche Gesetze}
+	\subsubsection{Knotengleichungen}
+	
+	$\sum_{k=1}^n{I_k}=0$
+	
+	Die Summe der Ströme über einen Knoten ist 0.
+	
+	Die Summe der Ströme über eine Hüllfläche ist 0.	
+	
+	\mypic{KnotengleichungII.png}
+	
+	\columnbreak
+	
+	\subsubsection{Maschengleichung}
+	
+	$\sum_{k=1}^n{U_k}=0$
+	
+	Die Summe aller Spannungen in einer Masche ist 0.
+	
+	\mypic{Maschengleichung.png}
+	
+	 	
+	
+	\subsection{Reihenschaltung}
+	
+	Alle Bauelemente haben \textbf{gleichen Strom}. Summe der Teilspannungen ergibt Gesamtspannung.
+	
+	$\frac{U_i}{U}=\frac{R_i}{R_g}$ \hfill $R_g = \sum_{k=1}^n{R_k}$
+
+	 	
+	
+	\subsection{Parallelschaltung}
+	
+	Alle Bauelemente haben \textbf{gleiche Spannung}.	
+	
+	$\frac{I_i}{I}=\frac{R_g}{R_i} $\hfill		$R_g=(\sum_{k=1}^n{1/R_i})^{-1}$
+
+	 
+	
+	\begin{multicols*}{2}
+	\subsubsection{Spannungsteiler}
+	
+	$U_1=\frac{R_1}{R_1+R_2}U$
+	
+	\mypic{Spannungsteiler}
+	
+	\subsubsection{Stromteiler}
+	
+	$I_1=\frac{R_2}{R_1+R_2}I$
+	
+	\mypic{Stromteiler}	
+	
+	\end{multicols*}
+	\vspace{-3ex}
+	
+	\subsection{Leistungsanpassung}
+	
+	Die maximale Leistung über den Lastwiderstand $R_a$ ergibt sich bei Widerstandsanpassung: $R_a=R_i$.
+	
+	Leistung: $(\frac{U_q}{R_i+R_a})^2 R_a$\hfill$P_max \rightarrow \frac{dP_{R_a}}{dR_a}$
+	
+	Maximal abgegebene Leistung: $P_{Ra,max}=\frac{U_q^2}{4R_i}=\frac{U_q^2}{4R_a}$
+	
+	
+	\subsection{Spannungsquelle / Stromquelle}
+	
+	$U=U_q-IR_i$\hfill \fbox{Ideal: $R_i=0$} \hfill$U_{0,I}=I_q\cdot R_i$
+	
+	\mypic{Stromquelle}
+	
+	Äquivalente Quellen: $U_q=I_q R_{i,I}\quad I_q=U_q/R_{i,U}$
+	
+	$\Rightarrow R_{i,I}=R_{i,U}$ 
+	
+	\subsection{Wirkungsgrad}
+	
+	$\eta=\frac{P_{R_a}}{P_{Ges}}=\frac{P_{Nutzbar}}{P_{Zugefuehrt}} \leq 1$
+	
+	Verlustleistung: $P_{Ges}-P_{R_a}$
+	
+	Im Falle der Leistungsanpassung ist $\eta=50\%$. Für $R_a\gg R_i$ geht $\eta$ gegen $100\%$ allerdings wird auch die Gesamtleistung kleiner. 
+	
+	\subsection{Stern-Dreieck-Umwandlung}
+	
+	\mypic{Sternschaltung}
+	\begin{center}
+	\begin{tabular}{cc}
+	Dreieck\dahe Stern&Stern \dahe Dreieck\\
+	$R_1=\frac{R_{12}R_{31}}{R_{12}+R_{23}+R_{31}}$&$R_{12}=R_1+R_2+\frac{R_1R_2}{R_3}$\\
+	$R_2=\frac{R_{23}R_{12}}{R_{12}+R_{23}+R_{31}}$&$R_{23}=R_2+R_3+\frac{R_2R_3}{R_1}$\\
+	$R_3=\frac{R_{23}R_{31}}{R_{12}+R_{23}+R_{31}}$&$R_{31}=R_3+R_1+\frac{R_3R_1}{R_2}$
+	\end{tabular}
+	\end{center}
+	
+	bei Symmetrie: $R_\lambda=\frac{R_\Delta^2}{3R_\Delta}=\frac{R_\Delta}{3}$\hfill$3R_\lambda=R_\Delta$
+
+	\vfill
+	\null
+	\columnbreak
+	
+	\subsection{Superpositionsprinzip}
+	
+	\mypic{Superpositionsprinzip}
+	
+	\begin{center}$I_1=I_{11}+I_{12}$\end{center}
+	
+	Wenn eine Schaltung mehrere Quellen enthält, können Ströme und Spannungen für jede Quelle einzeln berechnet werden. Spannungsquelle \dahe Kurzschluss, Stromquelle \dahe Leerlauf.
+	
+	\subsection{Ersatzspannungsquelle}
+	
+	aktiver Zweipol: besteht nur aus linearen Quellen und Widerständen. Kann durch eine Ersatz\textbf{spannungs}quelle mit $U_q$ ersetzt werden. ($U_q$ erhalten aus dem aktiven Zweipol mit $R_a=\infty$)
+	
+	\mypic{AktiverZweipol}
+	
+	$U_q=R_iI_K$\hfill$P_{max}|_{R_L=R_i}=\left(\frac{U_q}{2}\right)^2\cdot \frac{1}{R_i}$
+	
+	\vfill
+	\null
+	\columnbreak
+	
+	\subsection{Maschenstromverfahren}
+	
+	\begin{enumerate}
+	
+	\item
+	Ersetze \textbf{Stromquellen} durch einen \textbf{Leerlauf}, dabei werden die beiden \textbf{Elementarmaschen}, die die Stromquelle enthielten, zu einer neuen.
+	\item
+	Weise jeder Elementarmasche einen \textbf{Maschenstrom mit Umlaufsinn} zu.
+	\item
+	Füge die Stromquellen wieder ein. \textbf{Ergänze zusätzliche Maschenströme}, die jeweils nur über eine Stromquelle fliessen und in Richtung des Stromes der Quelle weisen. \textbf{Maschenstrom = Strom durch Quelle}.
+	\item
+	Stelle für jede Elementarmasche die \textbf{Maschengleichung} auf. $U_{R_i}=R_i*\sum{I_{M,R_i}}$.
+	
+	\end{enumerate}
+	
+	V1: nur Maschenströme fliessen, benötigte Zweigströme mit Knotengleichgewicht berechnen.
+	
+	V2: über Maschengleichung alle Ströme verknüpfen, mit Knotengleichgewichten ergänzen \dahe alle Zweigströme direkt.
+	
+	\subsection{Knotenpotenzialverfahren}	
+
+	\begin{enumerate}
+	\item
+	Wähle einen \textbf{Bezugsknoten $K_0$} mit Potential = 0;
+	\item
+	Ersetze Spannungsquellen durch Kurzschlüsse.
+	\item
+	Weise $K_{i\neq 0}$ Potentiale $\phi_i$ zu.
+	\item
+	Trenne virtuelle Kurzschlüsse und weise $\phi_u+U_{\nu}$ zu.
+	\item
+	Stelle für alle $K_{i\neq 0}$ die Knotengleichungen in Abhängigkeit von $\phi_i$ auf. $\sum{I_i}=0$
+	\end{enumerate}
+	
+	\section{Elektrische Felder}
+	
+	\subsection{Coulomb'sches Gesetz}
+	
+	$\vec{F}=\frac{1}{4\pi\epsilon_0}\frac{Q_1Q_2}{a^2}$ \hfill$\epsilon_0=\SI{8.8541e-12}{\ampere\second\per\volt\per\meter}$
+	
+	$\vec{E}=\frac{\vec{F}}{Q}$\hfill$[E]=\si{\volt\per\meter}$
+
+	\subsection{Kapazität}
+	
+	$Q = CU$\hfill$[C]=\si{\ampere\second\per\volt}=\si{\farad}$
+	
+	$F = QE\qquad W=Fs=QEs\qquad E = \frac{U}{s}$
+	
+	$U = \int{Eds}\qquad C=\epsilon_0\frac{A}{s}$
+	
+	\mypic{Kondensator}
+	
+	\subsubsection{Parallel-/Serienschaltung}
+	
+	$C=\sum_{k=1}^n{C_k}$\hfill$\frac{1}{C}=\sum_{k=1}^n{\frac{1}{C_k}}$
+	
+	\subsection{Plattenkondensator mit Dielektrikum}
+	
+	$E_i=\frac{E}{\epsilon_r}\qquad$ E im Dieletkrikum
+	
+	\subsubsection{teilweise/vollständig gefüllt:}
+	
+	Teilweise: $C_{tot}=\left(\frac{d-d_1}{\epsilon_0 A}+\frac{d_1}{\epsilon_0\epsilon_rA}\right)$
+	
+	\note{d=Gesamtdicke, $d_1$ = Dicke des Dielektrikums mit $\epsilon_r$}
+	
+	$U_d=\frac{U}{\epsilon_r}$\hfill$C_d=\epsilon_r\frac{Q}{U}=\epsilon_rC=\epsilon_r\epsilon_0\frac{A}{s}$ 
+	
+	\subsection{Elektrischer Fluss}	
+	
+	$\Psi=\int_A{\epsilon_0\vec{E}d\vec{A}}$\hfill$D=\frac{\Psi}{A}$
+	
+	\subsection{Gauss'scher Satz der Elektrostatik}
+	
+	$Q=\oint_A{\epsilon_0\vec{E}d\vec{A}}$
+	
+	\subsection{Energie im Kondensator}
+	
+	$W=\int_0^Q{\frac{q}{C}dq}=\frac{1}{2}QU=\frac{1}{2}CU^2$	
+	
+	\subsection{Folienkondensatoren}
+	
+	allgemein: geringe Kapazitätsdichte, hohe Strombelastbarkeit
+	
+	\emph{Kunststoff-Folienkondensatoren} ($\epsilon_r = 3.3 (PET), \epsilon_r=2.2 (Polypropylen)$) mit Dielektrikum aus isolierender Kunststofffolie.
+	
+	\emph{Metallfolienkondensatoren} besitzen eine sehr hohe Stromimpulsbelastbarkeit.
+	
+	\emph{metallisierte Kunststoff-Folienkondensatoren} bestehen aus auf Kunststofffolien aufgedampften Metallisierungen. Selbstheilend \dahe Kurzschluss verdampft infolge hoher Lichtbogentemperatur
+	
+	 
+	
+	\subsection{Elektrolytkondensatoren (Elko)}
+	
+	allgemein: gepolte Kondensatoren, Spannung von Anode zu Kathode muss positiv sein, ansonsten Schädigung der Bauteile.
+	Relativ hohe Kapazitätsdichte, relativ geringe erlaubte Strombelastbarkeit.
+	
+	\emph{Aluminium-Elko}($\epsilon_r=9.6$) Anode: aufgerauhte Aluminiumfolie (höhere Oberfläche als bei glatter Folie) mit dünner Oxidschicht. Kathode: leitfähige Flüssigkeit oder Polymer
+	
+	 
+	
+	\subsection{Keramikkondensatoren}	
+	
+	\emph{multi-layer ceramic capacitor (MLCC)}:
+
+	\emph{Klasse 1} ($\epsilon_r \approx 20-40$, feldstärkenunabhängig), definierte lineare Temperaturabhängigkeit.
+	
+	\emph{Klasse 2} ($10000>\epsilon_r > 200$, feldstärkenabhängig bis -80\%), nichtlineare Temperatur und Spannungsabhängigkeit.
+		
+	\columnbreak 
+	
+	\subsection{Transiente Vorgänge in RC-Schaltkreisen}
+	
+	\mypic{RCSchaltkreis}
+	
+	\dahe Kleinbuchstaben für veränderliche Grössen. Kirchhoffsche Gesetze bleiben gültig: 
+	
+	$\sum_{k=1}^n{i_k=0}$ für Knoten$\qquad\sum_{k=1}^n{u_k=0}$ für Maschen	
+	
+	\subsubsection{Strom-/Spannungsbeziehung am Kondensator}
+	
+	$i=i_R=i_c=C\frac{du_C}{dt}\qquad RC\frac{du_C}{dt}+u_C=U$
+	
+	\finn	
+	
+	$u_C(t)=u_{C_p}(t)+u_{C_h}(t)\qquad u_C(t)=U-Ue^{-\frac{t}{RC}}$
+	
+	$ u_C(t)=u_C(\infty)-[u_C(\infty)-u_C(0)]e^{-\frac{t}{RC}}$
+	
+	wobei $RC=\tau,\ ([\tau]=s)$ die Zeitkonstante ist.
+	
+	nach $\tau s\ u_C=63\%U$, nach $3\tau\ u_C=95\%U$.
+	
+	\emph{Spannungsverlauf am Kondensator ist IMMER stetig.}
+	
+	 
+	
+	\section{Magnetische Felder}
+	
+	\subsection{Feldlinien}
+	
+	\begin{itemize}
+	\compaq
+	\item
+	Von Nordpol zu Südpol
+	\item
+	immer in sich geschlossen
+	\end{itemize}
+	
+	 
+	
+	\subsubsection{Kraft auf einen Stromdurchflossenen Leiter}
+	
+	$F=BI\ l\sin(\alpha)\qquad\vec{F}=I\ \vec{l}\times\vec{B}$
+	
+	$[B]=\si{\newton\per\ampere\per\meter}=\si{\volt\second\per\meter\squared}=\si{\tesla}$
+	
+	 
+	
+	\subsubsection{Magnetischer Fluss}
+	
+	$\Phi=BA\cos(\alpha)\qquad\Phi=\int_A{\vec{B}d\vec{A}}\qquad [\Phi]=\si{\volt\second}=\si{\weber}$
+	
+	$\oint_A{\vec{B}d\vec{A}=0}$
+	
+	 
+	
+	\subsubsection{Magnetische Feldstärke}
+	
+	$B=\mu_0\frac{I}{2\pi r}\qquad \mu_0=4\pi\SI{e-7}{\volt\second\per\ampere\per\meter}\qquad B=\mu_0\mu_r H$
+	
+	 	
+	
+	\subsubsection{Durchflutungsgesetz}
+	
+	$\oint_S{\vec{H}d\vec{S}}=\int_A{\vec{I}d\vec{A}}=\Theta$
+	
+	daraus für Torusspule $\Theta=H2\pi r\Rightarrow H=\frac{NI}{2\pi r}\qquad\vec{H}=\frac{NI}{2\pi r}\vec{e}_\phi$
+
+	innerhalb und ausserhalb der Spule $H = 0$	
+	
+	daraus für gerade Spule $H_x=\frac{NI}{l}$
+	
+	 
+	
+	\subsection{Materie im Magnetfeld}
+	
+	\subsubsection{Diamagnetische Stoffe}
+	
+	\begin{itemize}
+	\compaq
+	\item
+	$\mu_r<1$
+	\item
+	Schwächen äusseres Magnetfeld leicht ab.
+	\item
+	Werden von einem magneten leicht abgestossen.
+	\end{itemize}
+	
+	\subsubsection{Paramagnetische Stoffe}
+
+	\begin{itemize}
+	\compaq
+	\item
+	$\mu_r>1$
+	\item
+	Verstärken äusseres Magnetfeld leicht.
+	\item
+	Werden von einem Magneten leicht angezogen.
+	\end{itemize}
+	
+	\subsubsection{Ferromagnetische Stoffe}
+
+	\begin{itemize}
+	\compaq
+	\item
+	$\mu_r\gg 1$
+	\item
+	Verstärken ein äusseres Magnetfeld stark.
+	\item
+	Werden von einem Magneten stark angezogen.
+	\item
+	Es gibt Bereiche mit gleicher Ausrichtung der Dipole (Weiss'sche Bezirke).
+	\end{itemize}
+	
+	\columnbreak
+	
+	\subsubsection{Hysteresis}
+	
+	\mypic{MagnetischeHysteresis}
+	
+	\begin{enumerate}
+	\compaq
+	\item
+	Wirkung der Weiss'schen Bezirke hebt sich auf.
+	\item
+	Ausgerichtete Bezirke wachsen. Danach sprunghaftes Umklappen
+	\item
+	Sättigung bei hohen Feldstärken
+	\item
+	Reduktion der Feldstärke führt zur Remanenz-Flussdichte $B_r$.
+	\item
+	Um wieder zu $B = 0$ zu kommen ist Koerzitivfeldstärke $H_c$ nötig.
+	\end{enumerate}
+	
+	Oberhalb der Curie-Temperatur $T_c$ gehen ferromagnetische Eigenschaften verloren.
+	
+	magnetisch hart/weich \dahe breite/schmale Hysteresiskurve
+	\vfill
+	\null
+	\columnbreak
+	
+	\subsection{Induktivität}
+	
+	$L=\frac{\Psi}{I}=\frac{N\Phi}{I}\qquad\Psi = $ verketteter magnetischer Fluss
+	
+	$[L]=\si{\volt\second\per\ampere}=\si{\henry}$
+
+	$L_{Ringkernspule}=\mu_r\mu_0N^2\frac{h}{2\pi}\ln(\frac{b}{a})$
+	\scriptsize $\begin{cases}a,b&\text{in. und äus. Radius}\\h&\text{Höhe}\end{cases}$\normalsize
+
+	$R_m=\frac{l_m}{\mu_0\mu_rA}\quad l_m=\pi(a+b)\quad A=(b-a)h$
+	
+	\finn
+	
+	für eine \hlcyan{Ringkernspule mit $a\approx b$ gilt:}
+	
+	$R_m=\frac{l}{\mu A}$ \hfill magnetischer Widerstand / Reluktanz
+	
+	$\Theta = NI = \Phi R_m$ \hfill Durchflutung des mag. Kreises
+	
+	$R_m=\frac{N^2}{L}$
+	
+	\subsection{Reihenschaltung / Parallelschaltung Induktivität}
+	
+	$L_g=\sum_{K=1}^n{L_k}$\hfill$\frac{1}{L_g}=\sum_{k=1}^n{\frac{1}{L_k}}$
+	
+	\subsection{Magnetischer Kreis}
+	
+	\mypic{MagnetischerKreis}
+	
+	$R_{m2}=\frac{l_2}{\mu A_2}\qquad \Phi = \frac{\Theta}{R_m} \qquad \Phi = \Phi_i$	
+	
+	$L=\frac{\Phi}{I}=\sum\frac{N_i\Phi_i}{I}$
+	
+	\mypic{MagnetischesKnotengleichgewicht}		
+	
+	$\oiint{\vec{B}d\vec{A}}=0\Rightarrow\sum_{i}{\Phi_i} = 0$ \hfill Knotengleichgewicht
+		
+	\subsubsection{Zusammenfassung}
+	
+	\begin{tabular*}{\linewidth}{ll}
+	elektrisch & magnetisch\\
+	$\kappa$&$\mu = \mu_r\mu_0$\\
+	$R=\frac{l}{\kappa A}$&$R_m=\frac{l}{\mu A}$\\
+	$U_{12}=\int_{P_1}^{P_2}{\vec{E}d\vec{s}}$ & $V_{m12}=\int_{P_1}^{P_2}{\vec{H}d\vec{s}}$\\
+	$I=\iint_A{\vec{J}d\vec{A}}$&$\iint_A{\vec{B}d\vec{A}}$\\
+	$U=RI$&$\Theta=R_m\Phi$\\
+	$U_0 = \underset{\text{Masche}}{\sum{U}}=\underset{\text{Masche}}{\sum{RI}}$&$\Theta = NI = \underset{\text{Masche}}{V_m}=\underset{\text{Masche}}{\sum{R_m\Phi}}$\\
+	$\underset{\text{Knoten}}{\sum{I}}=0$&$\underset{\text{Knoten}}{\sum{\Phi}}=0$
+	\end{tabular*}
+	
+	\finn
+	
+	\subsection{Lorentzkraft}
+	
+	$F_m=Q\vec{v}\times\vec{B}$
+	
+	Kräftegleichgewicht: $|\vec{F_C}|=|F_m|\Rightarrow\vec{E_i}=\vec{v}\times\vec{B}$
+	
+	$u=El_{12}$
+	
+	\mypic{Lorentzkraft}
+	
+	Rechte Hand: 
+	
+	\small$[Daumen,Zeige-,Mittelfinger]=[Strom,Feld,Kraft]$\normalsize
+	
+	\subsection{Induktionsgesetz}
+	
+	$U=N\frac{d\Phi}{dt}$
+	
+	Linke Hand: \small$[Daumen, Finger]=[\dot{\Phi},induzierter Strom]$\normalsize
+	
+	\columnbreak
+		
+	\subsection{Lenz'sche Regel}
+	
+	Die induzierte Spannung ist so gerichtet das ein durch sie hervogerufener Strom der Ursache ihrer Entstehung entgegenwirkt.
+	
+	Für die Induktivität: Eine Veränderung des Stroms bewirkt eine induzierte Spannung, die die Veränderung des Stroms erschwert.
+	
+	
+	\subsection{Selbstinduktion}
+	
+	$u=L\frac{di}{dt}$
+	
+	\mypic{Selbstinduktion}
+	
+	\subsection{Energie in der Induktivität}
+	
+	$dW=uidt=\underbrace{L\frac{di}{dt}}_{u}=Lidi$	
+	
+	$W=L\int_0^I{idi}=\frac{1}{2}LI^2$
+	
+	 
+	
+	\subsection{Hystereseverluste}
+	
+	magnetische Energiedichte: $W_m=\frac{1}{2}\mu H^2=\frac{B^2}{2\mu}$ 
+	
+	\small(= Fläche zwischen B-Achse und Hysteresekurve.)\normalsize
+	
+	Die Hystereseverluste sind proportional zum Flächeninhalt der Hysteresekurve.
+	
+	 
+	
+	\subsection{Magnetischer Kreis mit Luftspalt}
+	
+	$L=N^2\frac{\mu_r\mu_0A}{l_m+l_L\mu_r}\qquad N=\sqrt{L\frac{l_m+l_L\mu_r}{\mu_r\mu_0 A}}$	
+	
+	\finn
+	
+	$R_m=R_{mK}+R_{mL}=\frac{l_m}{\mu_0\mu_r A}+\frac{l_L}{\mu_0 A}\overset{\mu_r\rightarrow\infty}{\longrightarrow}R_{mL}$
+	
+	$L = N^2\frac{\mu_0A}{l_L}=N^2\frac{1}{R_{mL}}$ \footnotesize (also nur abhängig von $l_L$)\normalsize	
+	
+	 
+	
+	\subsection{Magnetische Kopplung}
+	
+	$U=N\frac{d\Phi}{dt}$
+	
+	$u_2=N_2\frac{d\Phi_{12}}{dt}\qquad u_2=L_{21}\frac{di_1}{dt}$
+	
+	gekoppelte Induktivitäten $L_{21}=L_{12}$ \scriptsize (Anordnungsabhängig)\normalsize
+	
+	Koppelfaktor $k_{21}=\frac{\Phi_{21}}{\Phi{11}}\qquad k_{12}=\frac{\Phi_{12}}{\Phi_{22}}$
+	
+	\mypic{MagnetischeKopplung}
+	
+	 
+	
+	\subsection{Idealer Übertrager}
+	
+	\mypic{Trafo1}
+		
+	\begin{align*}
+	u_1=N_1\frac{d}{dt}(\phi_{11}-\phi_{12})&=L_{11}\frac{di_1}{dt}-L_{12}\frac{di_2}{dt}\\	
+	u_2=N_2\frac{d}{dt}(-\phi_{21}+\phi_{22})&=-L_{21}\frac{di_1}{dt}+L_{22}\frac{di_2}{dt}
+	\end{align*}
+	
+	Idealisierung:
+	
+	\begin{itemize}
+	\compaq
+	\item
+	$\mu_r\rightarrow\infty$
+	\item
+	Widerstände der Wicklungen $\rightarrow 0$
+	\item
+	Hystereseverluste $\rightarrow 0$
+	\end{itemize}
+	
+	$\Theta = N_1i_1-N_2i_2=R_m\Phi_{ges}=\frac{l}{\mu A}(\Phi_1-\Phi_2)$
+	
+	$u_2=-\frac{N_2}{N_1}u_1\qquad \frac{i_1}{i_2}=\frac{N_2}{N_1}$
+	
+	\mypic{TrafoVorzeichen1}
+	
+	\mypic{TrafoVorzeichen2}
+	
+	 
+	
+	\subsection{Transiente Vorgänge in RL-Netwerken}
+	
+	$i_L(t)=\frac{U}{R}(1-e^{-\frac{t}{\tau}})=I_L(\infty)-[i_L(\infty)-i_l(0)]e^{-\frac{t}{\tau}}$
+	
+	$V_L(t)=L\frac{dV_L(t)}{dt}=R_eff[I_l(\infty)-I_L(0)]e^{-\frac{t}{\tau}}$
+	
+	wobei $\tau = \frac{L}{R_eff}$
+	
+	und $R_eff$ der Widerstand der Schaltung, betrachtet von den Klemmen der Induktivität. (Strommquellen = Leerlauf, Spannungsquellen = Kurzschluss)
+	
+	 
+	
+	\subsection{Maschenstromverfahren für RL-Netzwerke}
+	
+	\begin{enumerate}
+	\compaq
+	\item
+	Stromquellen durch Leerlauf ersetzen \dahe reduziertes Elementarmaschenset $E^*$
+	\item
+	Maschenströme $i_i$ einführen.
+	\item
+	Stromquellen wiedereinsetzen und für jede den jeweiligen Maschenstrom einführen.
+	\item
+	Maschengleichungen aufstellen. $\sum{U_i}=0\ $, $U_i=R_i*i_i\ $, $L_i\frac{di}{dt}$
+	\item
+	Strom-Spannungsbeziehung für die Kapazitätsspannung aufstellen. $C_i\frac{du_C}{dt}$
+	\end{enumerate}
+	
+	\vfill
+	\null
+	\columnbreak
+	
+	\subsection{Kernmaterialien für Transformatoren}
+	
+	\subsubsection{Blechkern}
+	Bleche als Kern \dahe je dünner das Blech desto kleiner die Wirbelstromverluste.
+	
+	Wirbelstromverlust \dahe magnetischer Fluss durch Querschnitt induziert Spannung, welche durch Wirbelstrom ausgegelichen wird.
+		
+	\subsubsection{Eisenpulver}
+	
+	Pulver und Kleber wird zu Kern verpresst. Über das Massenverhältnis kann $\mu$ eingestellt werdend \dahe Kleber wirkt als Luftspalt.
+	
+	 
+	
+	\subsubsection{Charakteristische Sättigungdichten}
+	
+	\begin{tabular}{ll}
+	Kernmaterial&Sättigungsdichte\\
+	MnZn-Ferrit&$\SI{0.39}{\tesla}$\\
+	Nanokristallin&$\SI{1.2}{\tesla}$\\
+	Amorph&$\SI{1.56}{\tesla}$\\
+	Silizium-Eisen&$\SI{1.73}{\tesla}$
+	\end{tabular}
+	
+	\finn
+	
+	 
+	
+	\section{Wechselstrom}
+	
+	\subsection{Grundbegriffe}
+	
+	\subsubsection{Wechselgrösse}
+	
+	Mittelwert einer zeitabhängigen Grösse ist 0. Sonst \textbf{Mischgrösse}.
+	
+	\columnbreak 
+	
+	\subsubsection{Sinusförmige Signale}
+	
+	\mypic{Sinussignal}
+	
+	$\hat{u}=NBhl\omega\Rightarrow u(t)=\hat{u}\sin(\omega t)$
+	
+	\footnotesize
+	\begin{tabular}{ll}
+	Scheitelwert & $\hat{u}$\\
+	Kreisfrequenz & $\omega$\\
+	Periode & $T=\frac{2\pi}{\omega}$\\
+	Frequenz & $f=\frac{1}{T}=\frac{\omega}{2\pi}$
+	\end{tabular}
+	\normalsize
+	
+	\finn
+	
+	 
+	
+	\subsubsection{Phasenverschiebung}
+	
+	\begin{align*}
+	u&=\hat{u}\sin(\omega t+\phi_u)\\
+	i&=\hat{i}\sin(\omega t+\phi_i)
+	\end{align*}
+	
+	Phasenverschiebung $\phi = \phi_u-\phi_i$
+	
+	 
+	
+	\subsubsection{Gleichrichtwert}
+	
+	zeitlicher Mittelwert des Betrages: 
+	
+	$\bar{|i|}=\frac{1}{T}\int_0^T{|i|dT}=\frac{2}{\pi}\hat{i}$
+	
+	 
+	
+	\subsubsection{Effektivwert}
+	
+	Wert des Gleichstroms der in einem Widerstand denselben Verlust wie der betrachtete Wechselstrom erwirkt.
+	
+	$W=\int_0^T{pdt}=\int_0^T{i^2Rdt}\Rightarrow P=\frac{W}{T}$
+	
+	Gleichsetzen der Wärmeleistungen:
+	
+	$I_{eff}=\sqrt{\frac{1}{T}\int_0^T{i^2dt}}=\frac{\hat{i}}{\sqrt{2}}$
+	 
+	\columnbreak
+	 	 
+	\subsection{Zeigerdiagramm}
+
+	\mypic{Zeigerdiagramm}
+	
+	Spitzenwertzeiger $\vec{\hat{u}}$ \hfill Effektivwertzeiger $\vec{\underline{U}}$
+	
+	Addition von gleichfrequenten Zeigern \dahe (geometrische) Vektoraddition
+	
+	 	
+	
+	\subsubsection{für gleichfrequente Vektoren}
+	
+	$u=\hat{u}\sin(\omega t + \phi_u)\rightarrow\underline{U'}=Ue^{j(\omega t +\phi_u)}$
+	
+	\important{$\underline{U'}=\underbrace{Ue^{i\phi_u}}_{\text{Zeitunabhängig}}\cdot\underbrace{e^{i\omega t}}_{\text{Zeitabhängig}}$}
+	
+	\important{$\underline{U}\longrightarrow Ue^{i\phi_u}$}
+	
+	 	
+	
+	\subsubsection{Komplexe Rechnung}
+
+	\begin{align*}
+	\Re(\underline{Z})&=X=Z\cos(\phi)\\
+	\Im(\underline{Z})&=Y=Z\sin(\phi)\\
+	\underline{Z}&=Z(\cos(\phi)+j\sin(\phi))\\
+	\underline{Z}&=Z\cdot e^{j\phi}
+	\end{align*}
+	
+	$|\underline{Z}|=Z=\sqrt{X^2+Y^2}$
+	
+	$\phi=\arctan(\frac{Y}{X})$
+	
+	$\underline{Z}\cdot\underline{Z}^*=X^2+Y^2=Z^2$
+	
+	\vfill
+	\null
+	\columnbreak
+	
+	\subsubsection{Operationen}
+	
+	$\underline{Z_1}+\underline{Z_2}=X_1+X_2+j(Y_1+Y_2)$
+	
+	$\underline{Z_1}\cdot\underline{Z_2}=Z_1\cdot Z_2\cdot e^{j(\phi_1+\phi_2)}$
+	
+	$\frac{\underline{Z_1}}{\underline{Z_2}}=\frac{Z_1}{Z_2}\cdot e^{j(\phi_1-\phi_2)}$
+	
+	$j\underline{Z}=e^{j\frac{\pi}{2}}Ze^{j\phi}=Ze^{j(\phi+\frac{\pi}{2})}$
+	
+	$\frac{1}{j}\underline{Z}=-j\underline{Z}=Ze^{j(\phi-\frac{\pi}{2})}$
+	
+	 
+	
+	\subsection{Bauelemente}
+	
+	\small
+	\begin{tabular}{lll}
+	$\underline{U}=R\underline{I}$&$\underline{I}=\underline{U}\frac{1}{R}$&$\underline{Z_R}=R$\\
+	$\underline{U}=j\omega L \underline{I}$&$\underline{I}=\underline{U}\frac{1}{j\omega L}$&$\underline{Z_L}=j\omega L$\\
+	$\underline{U}=\frac{1}{j\omega C}\underline{I}$&$\underline{I}=\underline{U}j\omega C$&$\underline{Z_C}=\frac{1}{j\omega C}$
+	\end{tabular}	
+	\normalsize
+	
+	\important{\underline{U}=\underline{Z}$\cdot$\underline{I}}
+	
+	$i(t)=|\underline{I}|\sqrt{2}\sin(\omega t+\angle I_c)$
+	
+	$u(t)=|\underline{U}|\sqrt{2}\sin(\omega t+\angle U_c)$ 
+	
+	\subsection{Reihen und Parallelschaltung von Impedanzen}
+	
+	$\underline{Z}_{ges}=\sum\limits_{k=1}^n{Z_k} \text{ und }\frac{\underline{U}_1}{\underline{U}_2}\text{ bzw. }\frac{\underline{U}_1}{\underline{U}_{ges}}=\frac{\underline{Z}_1}{\underline{Z}_{ges}}$
+	
+	$\frac{1}{\underline{Z}_{ges}}=\sum\limits_{k=1}^n{\frac{1}{\underline{Z}_k}}\text{ und }\frac{\underline{I}_1}{\underline{I}_2}=\frac{\underline{Z}_2}{\underline{Z}_1}\text{ bzw. }\frac{\underline{I}_1}{\underline{I}_{ges}}=\frac{\underline{Z}_{ges}}{\underline{Z}_1}$
+	
+	 
+	
+	\subsection{Ersatzquelle für Wechselstromkreise}
+	
+	\begin{enumerate}
+	\compaq
+	\item
+	Leerlaufspannung $|\underline{Z}_a|\rightarrow\infty$
+	\item
+	Kurzschluss-Strom $\underline{I}_k\rightarrow \underline{Z}_i=\frac{\underline{U}_q}{\underline{I}_k}$	
+	\end{enumerate}
+	
+	\begin{itemize}
+	\compaq
+	\item
+	Ohmsches Gesetz, Kirhoff'sche Gesetze, Maschenstrom-, Knotenpotenzialverfahren, Superpositionsprinzip sind analog gültig, unter der Voraussetzung das alle Quellen unter der gleichen Frequenz arbeiten.
+	\item
+	Stern-Dreieck-Umwandlung, der Satz der Ersatzspannungsquelle und das Verfahren für äquivalente Quellen sind immer nur für eine Frequenz gültig!
+	
+	\end{itemize}
+	
+	\vfill
+	\null
+	\columnbreak
+	 
+	
+	\subsection{Frequenzabhängiger Spannungsteiler (Tiefpass)}
+	
+	\vspace{1ex}
+	
+	\mypic{FrequenzabhangigerSpannungsteiler}
+	
+	\important{$\frac{U_2}{U_1}=\frac{1}{\sqrt{1+(\omega R C)^2}}\qquad \phi=-\arctan(\omega RC)$}
+	
+	$\underline{U}_2=\frac{\underline{U}_1}{j\omega CR +1}$
+	
+	 
+	
+	\subsection{Umwandlung von Reihen- und Parallelschaltung}
+	
+	\mypic{ReihenParallel}	
+	
+	\important{$R_2=\frac{R_1^2+X_1^2}{R_1}$ und $X_2=\frac{R_1^2+X_1^2}{X_1}$}
+	
+	 
+	
+	\subsection{Leistung im Wechselstromkreis}
+	
+	$p(t)=UI(1-\cos(2\omega t)$\hfill $UI$ zeitlicher Mittelwert
+	
+	$U$ und $I$ Effektivwerte.
+	
+	 
+	
+	\subsubsection{Leistung im RL-Netzwerk}
+	
+	$u=\hat{u}\sin(\omega t +\phi)$\hfill$i=\hat{i}\sin(\omega t)$
+	
+	$u_R=\hat{u}_R\sin(\omega t)$\hfill$u_L=\hat{u}_L\sin(\omega t+\pi/2)$
+	
+	\mypic{LeistungRL}
+	
+	$\hat{u}_R=\hat{u}\cos(\phi)$\hfill$\hat{u}_L=\hat{u}\sin(\phi)$
+	
+	$p_R=\hat{i}\hat{u}\cos(\phi)\frac{1}{2}(1-\cos(2\omega t))$
+	
+	$p_L=\hat{i}\hat{u}\sin(\phi)\sin(\omega t)\cos(\omega t)$
+	
+	 
+	
+	\subsubsection{Leistung mit allgemeiner Impedanz}
+	
+	$u=\hat{u}\sin(\omega t +\phi)$\hfill$i=\hat{i}\sin(\omega t)$
+	
+	$p=\hat{u}\hat{i}\sin(\omega t +\pi)\sin(\omega t)=UI\cos(\phi)-UI\cos(2\omega t +\phi)$
+	
+	\importname{Wirkleistung}{$P=UI\cos(\phi)$}
+	
+	
+	\subsection{Blindleistung}
+	
+	Allgemeine Augenblicksleistung im Verbraucher Z:
+	
+	\important{$\underbrace{UI\cos(\phi)[1-\cos(2\omega t+2\pi]}_{\text{Wirkleistung}}-\underbrace{UI\sin(\phi)\sin(2\omega t + 2\phi}_{\text{Blindleistung}}$}
+	
+	Blindleistung ist der pendelnde Anteil der Leistung mit Mittelwert 0.
+	
+	\importname{Blindleistung}{$Q=UI\sin(\phi)$}
+	
+	$[Q]=\text{VAr = volt-Ampere reactive}$
+	
+	 
+	
+	\subsubsection{bei Rechnung mit reinen Effektivwerten}
+	
+	Kondensator: $Q=-UI=-U\omega C=-I^2\frac{1}{\omega C}$
+	
+	Induktivität: $Q = +UI=\frac{U^2}{\omega L}=I^2\omega L$
+	
+	 
+	
+	\subsection{Scheinleistung}
+	
+	\importname{Scheinleistung}{$S=UI\qquad$}
+	
+	\importname{Leistungsfaktor}{$\cos\phi=\frac{P}{S}$}
+	
+	\important{$\underline{S}=P+jQ=\underline{UI^*}=UI(\underbrace{\cos(\phi)}_{\text{Wirkleistung}}+\underbrace{i\sin(\phi)}_{\text{Blindleistung}}$}
+	
+	\columnbreak
+	
+	\subsection{Leistungsanpassung}
+	
+	\mypic{Leistungsanpassung}
+	
+	$P=I^2R_a=\frac{U_q^2R_a}{(R_i+R_a)^2+(X_i+X_a)^2}$
+	
+	wird maximal bei \fbox{$\underline{Z}_a=\underline{Z}_i^*$}
+	
+	 
+	
+	\subsection{Blindleistungskompensation}
+	
+	\mypic{Blindleistungskompensation1}
+	
+	Blindstromanteil $I_b$ überträgt keine Wirkleistung, verursacht nur Blindleistung.
+	
+	\mypic{Blindleistungskompensation2}
+	
+	Zuschalten eines Kondensators bewirkt eine Verringerung der Phase. $I_c$ kompensiert den Blindstrom $I_b$.
+	
+	\columnbreak
+	
+	\subsection{RL-Tiefpassfilter}
+	
+	\mypic{Tiefpassfilter}
+	
+	\important{$\frac{U_2}{U_1}=\frac{R}{\sqrt{R^2+(\omega L)^2}}\qquad \phi=-\arctan(\frac{\omega L}{R})$}
+	
+	\importname{Grenzfrequenz}{$\omega_g=\frac{R}{L}=2\pi f_g$} 
+	
+	\subsection{RL-Hochpassfilter}
+	
+	\mypic{Hochpassfilter}
+	
+	\important{$\frac{U_2}{U_1}=\frac{\omega L}{\sqrt{R^2+(\omega L)^2}}$}
+	
+	\importname{Grenzfrequenz}{$\omega_g=\frac{R}{L}=2\pi f_g$}
+	
+	\vfill
+	\null	 
+	\columnbreak
+	
+	\subsection{RLC-Serienschwingkreis}
+	
+	\mypic{RLCSchwingkreis}
+	
+	\important{$w(t)=w_C(t)+w_L(t)=\frac{1}{2}Cu^2+\frac{1}{2}Li^2=const.$}
+	
+	\mypic{RLCSchwingkreis2}
+	
+	$\underline{Z}=R+j(\omega L - \frac{1}{\omega C})$
+		
+	\importname{rein reelle Impedanz}{$\omega_r=\frac{1}{\sqrt{LC}}$}
+	
+	\note{$\approx$ für $\omega = \omega_r$}
+	\small
+		
+	\importname{Güte}{$Q_s=\frac{2\pi W_{ges}}{|\Delta W|}=\frac{1}{R}\sqrt{\frac{L}{C}}=\frac{\omega_r L}{R}=\frac{1}{R\omega_r C}\approx\frac{U_L}{U}=\frac{U_C}{U}$}
+	\normalsize
+	
+	\vfill
+	\null
+	\columnbreak 
+	
+	\subsection{RLC-Parallelschwingkreis}
+	
+	\mypic{RLCParallelschwingkreis}
+	
+	$\underline{Y}=G+j(\omega C - \frac{1}{\omega L})$
+	
+	\importname{rein reelle Impedanz}{$\omega_r=\frac{1}{\sqrt{LC}}=2\pi f_r$}
+	
+	\note{$\approx$ für $\omega=\omega_r$}
+	
+	\small	
+	
+	\importname{Güte}{$Q_p=\frac{2\pi W_{ges}}{|\Delta W|}=R\sqrt{\frac{C}{L}}=\frac{\omega_r C}{1/R}=\frac{1/\omega_r L}{1/R}\approx\frac{I_L}{I}=\frac{I_C}{I}$}
+	
+	\importname{Dämpfung}{$d=\frac{1}{Q}$}
+	
+	 
+	
+	\section{Reale Bauelemente}
+	
+	\subsection{Parasitäre Effekte bei Spulen}
+	
+	Ideale Induktivitäten, Kapazitäten und ohmsche Widerstände nicht realisierbar \dahe Ersatzschaltung.
+	
+	\mypic{RealeInduktivitaet}
+	
+	\importname{Spulengüte}{$Q_L=\frac{\omega L}{R}$}	
+	
+	\importname{Verlustfaktor und Verlustwinkel}{$d=\tan(\delta)=\frac{R}{\omega L}$}
+	
+	Phasenverschiebungwinkel: $\delta = 90^\circ - \phi$
+	
+	\subsubsection{Parasitäre Kapazität}
+	
+	Im Betrieb liegt ergibt sich zwischen den einzelnen Windungen ein elektrisches Feld und damit eine parasitäre Kapazität.
+	
+	Näherungsweise Zusammenfassung zu einer parasitären Gesamtkapazität $C_p$, die parallel zur Spule liegt.
+	
+	\mypic{ParasitaereKapazitaet}
+	
+	\subsection{Parasitäre Effekte bei Kondensatoren}
+	
+	Da die verwendeten Dielektrika nicht ideal sind fliesst im realen Kondensator ein Leckstrom.
+	
+	\importname{Verlustfaktor}{$d=\tan\delta=\frac{\kappa}{\omega \epsilon_0\epsilon_r}$}
+	
+	\note{$\kappa$ Leitfähigkeit des Dielektrikums
+
+	$\delta = 90^\circ -|\phi|$}	
+	
+ 	\mypic{RealeKapazitaet}
+ 	
+ 	\vfill
+ 	\null
+ 	\columnbreak
+ 	
+ 	\subsubsection{Parasitärer Widerstand / Induktivität}
+ 	
+ 	Neben dem Leckstrom ergeben sich beim Betrieb dynamische Verluste, welche in Wärme umgesetzt werden. Diese Umpolarisierungsverluste können durch den äquivalenten Serienwiderstand $R_{ESR}$ beschrieben werden.
+ 	
+ 	Das vom Wechstrom erzeugte magnetische Feld in Zuleitungen und Kondensator wird durch eine äquivalente Serieninduktivität $L_{ESL}$ modelliert.
+ 	
+ 	\mypic{ParasitaereInduktivitaet}
+ 	
+ 	\vfill
+ 	\null
+ 	\columnbreak
+	
+	\subsection{Parasitäre Effekte bei Widerständen}
+	
+	In einem gewickelten Widerstand ergibt sich eine relativ grosse parasitäre Serieninduktivität. Analog zu den Spulen haben auch Widerstände eine parasitäre Kapazität.
+	
+	\mypic{ParasitaereWiderstaende}
+	
+	Zur Verringerung der Induktivität: \hlcyan{bifilare Wicklung}. Dadurch wird jedoch die parasitäre Kapazität erhöht. Alternativ können \hlcyan{Schichtwiderstände} verwendet werden, wodurch die Serieninduktivität stark gesenkt wird.
+	
+	\mypic{NiederohmigHochohmig}
+	
+	\subsection{Skin-Effekt}
+	
+	Veränderlicher Strom erzeugt magnetisches Wechselfeld, erzeugt veränderlichen magnetischen Fluss, induziert Spannung \dahe Wirbelstrom in der Mitte des Leiters entgegen der eigentlichen Stromrichtung. So wird die effektive Stromdichte in der Mitte des Leiters verringert und am Rand erhöht.
+	
+	
+	
+	
+	
+	
+		
+\end{multicols*}
+\end{document}
