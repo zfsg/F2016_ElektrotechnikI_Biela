@@ -1,60 +1,8 @@
 \documentclass[10pt,a4paper]{scrartcl}
 
 \input{../Headerfiles/Packages}
-\usepackage[ngerman]{babel}
-\def\StyleColor{Snow4}
-
-% section color box
-\setkomafont{section}{\mysection}
-
-\newcommand{\mysection}[1]{	
-	\Large\normalfont\scshape
-    \setlength{\fboxsep}{0cm}%already boxed
-    \vspace{-1ex}
-    \colorbox{\StyleColor!60}{%
-        \begin{minipage}{\linewidth}%
-            \vspace*{4pt}%Space before
-            #1
-            \vspace*{4pt}%Space after
-        \end{minipage}%
-     }
-     \vspace{0ex}
-}
-
-%subsection color box
-\setkomafont{subsection}{\mysubsection}
-
-\newcommand{\mysubsection}[1]{%
-    \normalsize\normalfont\scshape%
-    \vspace{-2.5ex}
-    \setlength{\fboxsep}{0cm}%already boxed
-    \colorbox{\StyleColor!40}{%
-        \begin{minipage}{\linewidth}%
-            \vspace*{4pt}%Space before
-             #1
-            \vspace*{4pt}%Space after
-        \end{minipage}%
-    }
-    \vspace{-2.5ex}
-}
-    
-\setkomafont{subsubsection}{\mysubsection}
-\newcommand{\mysubsubsection}[1]{%
-    \small\normalfont\scshape%
-    \vspace{-2.5ex}
-    \setlength{\fboxsep}{0cm}%already boxed
-    \colorbox{\StyleColor!5}{%
-        \begin{minipage}{\linewidth}%
-            \vspace*{4pt}%Space before
-             #1
-            \vspace*{4pt}%Space after
-        \end{minipage}%
-    }
-    \vspace{-2.5ex}
-}
+\input{../Headerfiles/Titles}
 \input{../Headerfiles/Commands}
-
-
 
 %-------------------------------------------------------------------
 %linespread
